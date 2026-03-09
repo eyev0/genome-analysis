@@ -10,19 +10,40 @@ A command-line tool that takes a standard VCF file (e.g., from 23andMe, Ancestry
 
 **Prerequisites:** Python 3.8+
 
-```
+```bash
 pip install requests pgscatalog-core
 ```
 
-`pgscatalog-core` is optional but required for downloading PGS scoring files via `download_pgs.py`.
+`pgscatalog-core` is optional but required for downloading PGS scoring files from source via `download_pgs.py`.
 
-**Run the pipeline:**
+**Option A: Download pre-built databases from GitHub Releases (fastest)**
 
 ```bash
-python download_pgs.py                                          # Download 44 PGS scoring files (~1GB)
+# Download from Releases page
+gh release download v1.0.0 --repo eyev0/genome-analysis
+
+# Extract PGS scoring files
+tar xzf pgs_scoring_files_grch37.tar.gz
+
+# Move ClinVar VCF to cache
+mkdir -p cache
+mv clinvar_grch37.vcf.gz cache/
+
+# Run
 python genome_analysis.py --vcf your_file.vcf --pgs-dir ./pgs_scoring_files
-# Output: results/genome_report.json
 ```
+
+Or download manually from [Releases](https://github.com/eyev0/genome-analysis/releases/tag/v1.0.0) and extract to the same locations.
+
+**Option B: Download from original sources**
+
+```bash
+python download_pgs.py                                          # Download 44 PGS files from PGS Catalog (~1.3GB)
+python genome_analysis.py --vcf your_file.vcf --pgs-dir ./pgs_scoring_files
+# ClinVar VCF (~190MB) auto-downloads to cache/ on first run
+```
+
+**Output:** `results/genome_report.json`
 
 **Useful flags:**
 
