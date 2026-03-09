@@ -10,12 +10,10 @@ pgs_scoring_files/
 cache/
 
 # Analysis output
-genome_report.json
+reports/
 results/
 genome_report/
 
 __pycache__
 
 docs/plans/
-
-reports

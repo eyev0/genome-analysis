@@ -99,7 +99,7 @@ Examples:
         """
     )
     parser.add_argument("--vcf", required=True, help="Input VCF file (.vcf or .vcf.gz)")
-    parser.add_argument("--output-dir", default="./results", help="Output directory for genome_report.json")
+    parser.add_argument("--output-dir", default="./reports", help="Output directory for genome_report.json")
     parser.add_argument("--cache-dir", default="./cache", help="Cache directory for downloaded databases")
     parser.add_argument("--pgs-dir", default=None,
                         help="Directory with PGS Catalog scoring files (.txt.gz). "

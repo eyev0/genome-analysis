@@ -44,7 +44,7 @@ python genome_analysis.py --vcf your_file.vcf --pgs-dir ./pgs_scoring_files
 # ClinVar VCF (~190MB) auto-downloads to cache/ on first run
 ```
 
-**Output:** `results/genome_report.json`
+**Output:** `reports/genome_report.json`
 
 **Useful flags:**
 
