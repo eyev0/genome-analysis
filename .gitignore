@@ -4,8 +4,6 @@
 # Personal genome data (NEVER commit)
 *.vcf
 *.vcf.gz
-egor/
-lera/
 
 # Downloaded databases (reproducible via scripts)
 pgs_scoring_files/
@@ -19,3 +17,5 @@ genome_report/
 __pycache__
 
 docs/plans/
+
+reports
