@@ -1,0 +1,20 @@
+# IDE
+.project
+
+# Personal genome data (NEVER commit)
+*.vcf
+*.vcf.gz
+egor/
+
+# Downloaded databases (reproducible via scripts)
+pgs_scoring_files/
+cache/
+
+# Analysis output
+genome_report.json
+results/
+genome_report/
+
+__pycache__
+
+docs/plans/
