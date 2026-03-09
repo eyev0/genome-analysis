@@ -5,6 +5,7 @@
 *.vcf
 *.vcf.gz
 egor/
+lera/
 
 # Downloaded databases (reproducible via scripts)
 pgs_scoring_files/
