@@ -22,8 +22,9 @@ pip install requests pgscatalog-core
 # Download from Releases page
 gh release download v1.0.0 --repo eyev0/genome-analysis
 
-# Extract PGS scoring files
-tar xzf pgs_scoring_files_grch37.tar.gz
+# Extract PGS scoring files (both archives go into pgs_scoring_files/)
+tar xzf pgs_large_grch37.tar.gz
+tar xzf pgs_small_grch37.tar.gz
 
 # Move ClinVar VCF to cache
 mkdir -p cache
