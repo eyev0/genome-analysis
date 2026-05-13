@@ -2,4 +2,4 @@ requests>=2.31
 numpy>=1.24
 scipy>=1.10
 pgscatalog-core>=0.2
-yhaplo>=2.1
+yhaplo @ git+https://github.com/23andMe/yhaplo.git
