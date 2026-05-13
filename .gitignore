@@ -15,5 +15,15 @@ results/
 genome_report/
 
 __pycache__
+*.pyc
+.pytest_cache/
+
+# Python virtual environments
+venv/
+.venv/
+env/
+
+# macOS
+.DS_Store
 
 docs/plans/
