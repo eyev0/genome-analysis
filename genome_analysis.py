@@ -6,7 +6,7 @@ Comprehensive analysis of a VCF file against 5 open databases:
   Layer 1: Polygenic Risk Scores (PGS Catalog)
   Layer 2: Pharmacogenetics (CPIC guidelines)
   Layer 3: ClinVar pathogenic variants
-  Layer 4: Ancestry inference (AIMs panel)
+  Layer 4: Ancestry Inference (AIMs + ADMIXTURE + K-calculators + Haplogroups)
   Layer 5: GWAS trait associations
 
 Usage:
@@ -88,7 +88,7 @@ Layers:
   1  Polygenic Risk Scores (PGS Catalog)
   2  Pharmacogenetics (CPIC)
   3  ClinVar Pathogenic Variants
-  4  Ancestry Inference (AIMs)
+  4  Ancestry Inference (AIMs + ADMIXTURE + K-calculators + Haplogroups)
   5  GWAS Trait Associations
 
 Output: genome_report.json (single unified JSON file)
@@ -162,7 +162,8 @@ Examples:
     # Layer 4: Ancestry
     if 4 in layers_to_run:
         try:
-            layer_results[4] = run_layer4_ancestry(genome, logger)
+            # Some sub-analyses require external binaries and auto-skip if missing.
+            layer_results[4] = run_layer4_ancestry(genome, args.cache_dir, logger)
         except Exception as e:
             logger.error(f"Layer 4 failed: {e}")
             layer_results[4] = {"layer": 4, "error": str(e)}
